@@ -18,7 +18,7 @@ abstract class StatementDateValueExtractor extends StatementValueExtractor
                 $julian = new DateTimeImmutable(static::trimValue($value));
                 $julianDays = juliantojd($julian->format('m'), $julian->format('d'), $julian->format('Y'));
                 list($month, $day, $year) = explode('/', jdtogregorian($julianDays));
-                $date = $julian->setDate($year, $month, $day);
+                $date = $julian->setDate($year, $month, $day)->format('Y-m-d\TH:i:s\Z');
                 break;
 
             default:

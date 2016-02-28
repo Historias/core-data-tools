@@ -4,15 +4,20 @@ namespace Historian\Importer\WikiData\Extractor;
 use Historian\Importer\WikiData\Property;
 use Symfony\Component\PropertyAccess\PropertyPath;
 
-class DurationEndExtractor extends StatementDateValueExtractor
+class TwoLetterIsoCodeExtractor extends StatementValueExtractor
 {
     public function getPath() : PropertyPath
     {
-        return new PropertyPath('[duration][end]');
+        return new PropertyPath('[two_letter_iso_code]');
     }
 
     protected function getProperty() : Property
     {
-        return Property::DISSOLVED_OR_ABOLISHED();
+        return Property::ISO_2_LETTER_CODE();
+    }
+
+    protected function getFallbackProperty()
+    {
+        return Property::FOLLOWED_BY();
     }
 }

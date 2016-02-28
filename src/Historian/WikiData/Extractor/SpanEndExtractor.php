@@ -4,15 +4,15 @@ namespace Historian\Importer\WikiData\Extractor;
 use Historian\Importer\WikiData\Property;
 use Symfony\Component\PropertyAccess\PropertyPath;
 
-class DurationBeginExtractor extends StatementDateValueExtractor
+class SpanEndExtractor extends StatementDateValueExtractor
 {
     public function getPath() : PropertyPath
     {
-        return new PropertyPath('[duration][begin]');
+        return new PropertyPath('[span][end]');
     }
 
     protected function getProperty() : Property
     {
-        return Property::INCEPTION();
+        return Property::DISSOLVED_OR_ABOLISHED();
     }
 }

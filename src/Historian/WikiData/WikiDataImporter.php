@@ -57,7 +57,11 @@ class WikiDataImporter implements Importer
                 continue;
             }
 
-            $data[] = $this->extractItem($id, $progressLogger, $errorLogger);
+            $item = $this->extractItem($id, $progressLogger, $errorLogger);
+            if ($item === null) {
+                continue;
+            }
+            $data[] = $item;
         }
 
         return $data;
@@ -80,8 +84,20 @@ class WikiDataImporter implements Importer
             }
         }
 
-        if (empty($country['duration']['start']) && empty($country['duration']['end'])) {
-            unset($country['duration']);
+        if (empty($country['span']['begin']) && empty($country['span']['end'])) {
+            unset($country['span']);
+        }
+        if (empty($country['three_letter_iso_code'])) {
+            unset($country['three_letter_iso_code']);
+        }
+        if (empty($country['two_letter_iso_code'])) {
+            unset($country['two_letter_iso_code']);
+        }
+        if (empty($country['numeric_iso_code'])) {
+            unset($country['numeric_iso_code']);
+        }
+        if (empty($country['name'])) {
+            return null;
         }
 
         $progressLogger->logImportEnd($uuid, $id, $country);

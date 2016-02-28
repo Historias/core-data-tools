@@ -4,11 +4,11 @@ namespace Historian\Importer\WikiData\Extractor;
 use Historian\Importer\WikiData\Property;
 use Symfony\Component\PropertyAccess\PropertyPath;
 
-class Iso3LetterCodeExtractor extends StatementValueExtractor
+class ThreeLetterIsoCodeExtractor extends StatementValueExtractor
 {
     public function getPath() : PropertyPath
     {
-        return new PropertyPath('[iso_3_letter_code]');
+        return new PropertyPath('[three_letter_iso_code]');
     }
 
     protected function getProperty() : Property
