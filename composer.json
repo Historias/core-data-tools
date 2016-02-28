@@ -1,0 +1,30 @@
+{
+  "name": "historias/core-data-tools",
+  "description": "Tooling for historias data",
+  "type": "?",
+  "authors": [
+    {
+      "name": "Lars Strojny",
+      "email": "lars@strojny.net"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "ramsey/uuid": "~3",
+    "nesbot/carbon": "~1"
+  },
+  "require-dev": {
+    "addwiki/wikibase-api": "dev-master",
+    "justinrainbow/json-schema": "~1.3",
+    "guzzlehttp/guzzle": "~6",
+    "eloquent/enumeration": "~5",
+    "kevinrob/guzzle-cache-middleware": "^1.1",
+    "league/flysystem": "^1.0",
+    "symfony/property-access": ">2"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Historian\\Importer\\": "src/Historian"
+    }
+  }
+}
