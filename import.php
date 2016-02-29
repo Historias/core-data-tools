@@ -12,7 +12,7 @@ use Historias\Importer\WikiData\Extractor\ExtractBeginOfSpanFromCountry;
 use Historias\Importer\WikiData\Extractor\ExtractBeginOfSpanFromInception;
 use Historias\Importer\WikiData\Extractor\ExtractBeginOfSpanFromState;
 use Historias\Importer\WikiData\Extractor\ExtractEndOfSpanFromCountry;
-use Historias\Importer\WikiData\Extractor\ExtractEndOfSpanFromDissolval;
+use Historias\Importer\WikiData\Extractor\ExtractEndOfSpanFromDissolution;
 use Historias\Importer\WikiData\Extractor\ExtractEndOfSpanFromState;
 use Historias\Importer\WikiData\Extractor\ExtractName;
 use Historias\Importer\WikiData\Extractor\ExtractNumericIsoCode;
@@ -101,7 +101,7 @@ $layerEditor = new LayerEditor(
             new ExtractBeginOfSpanFromState(),
             new ExtractBeginOfSpanFromCountry(),
 
-            new ExtractEndOfSpanFromDissolval(),
+            new ExtractEndOfSpanFromDissolution(),
             new ExtractEndOfSpanFromState(),
             new ExtractEndOfSpanFromCountry(),
 

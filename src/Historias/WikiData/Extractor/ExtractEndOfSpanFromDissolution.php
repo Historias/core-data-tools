@@ -4,7 +4,7 @@ namespace Historias\Importer\WikiData\Extractor;
 use Historias\Importer\WikiData\Property;
 use Symfony\Component\PropertyAccess\PropertyPath;
 
-class ExtractEndOfSpanFromDissolval extends StatementValueExtractor
+class ExtractEndOfSpanFromDissolution extends StatementValueExtractor
 {
     public function getPath() : PropertyPath
     {
