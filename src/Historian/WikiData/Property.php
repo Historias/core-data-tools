@@ -5,7 +5,7 @@ use Eloquent\Enumeration\AbstractEnumeration;
 
 final class Property extends AbstractEnumeration
 {
-    const IS_INSTANCE_OF = 31;
+    const INSTANCE_OF = 31;
     const CAPITAL = 36;
     const HAS_PART = 527;
     const ISO_2_LETTER_CODE = 297;

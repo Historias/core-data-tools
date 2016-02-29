@@ -30,7 +30,6 @@ class ItemFinder
                     $this->itemIds,
                     json_decode($response->getBody()->getContents(), true)['items']
                 );
-                array_unique($this->itemIds);
             }
         );
     }
@@ -39,6 +38,6 @@ class ItemFinder
     {
         (new EachPromise($this->promises))->promise()->wait();
 
-        return $this->itemIds;
+        return array_unique($this->itemIds);
     }
 }

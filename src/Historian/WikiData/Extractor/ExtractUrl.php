@@ -5,7 +5,7 @@ use Symfony\Component\PropertyAccess\PropertyPath;
 use Wikibase\DataModel\Entity\Item;
 use Wikibase\DataModel\Services\Lookup\ItemLookup;
 
-class UrlExtractor implements Extractor
+class ExtractUrl implements Extractor
 {
     public function getPath() : PropertyPath
     {

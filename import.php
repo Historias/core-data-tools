@@ -8,14 +8,18 @@ use Historian\Importer\Filter;
 use Historian\Importer\Identity\UuidMap;
 use Historian\Importer\LayerEditor;
 use Historian\Importer\ProgressLogger;
+use Historian\Importer\WikiData\Extractor\ExtractBeginOfSpanFromCountry;
+use Historian\Importer\WikiData\Extractor\ExtractBeginOfSpanFromState;
+use Historian\Importer\WikiData\Extractor\ExtractEndOfSpanFromCountry;
+use Historian\Importer\WikiData\Extractor\ExtractEndOfSpanFromState;
 use Historian\Importer\WikiData\Extractor\Extractor;
-use Historian\Importer\WikiData\Extractor\NameExtractor;
-use Historian\Importer\WikiData\Extractor\NumericIsoCodeExtractor;
-use Historian\Importer\WikiData\Extractor\SpanBeginExtractor;
-use Historian\Importer\WikiData\Extractor\SpanEndExtractor;
-use Historian\Importer\WikiData\Extractor\ThreeLetterIsoCodeExtractor;
-use Historian\Importer\WikiData\Extractor\TwoLetterIsoCodeExtractor;
-use Historian\Importer\WikiData\Extractor\UrlExtractor;
+use Historian\Importer\WikiData\Extractor\ExtractName;
+use Historian\Importer\WikiData\Extractor\ExtractNumericIsoCode;
+use Historian\Importer\WikiData\Extractor\ExtractBeginOfSpanFromInception;
+use Historian\Importer\WikiData\Extractor\ExtractEndOfSpanFromDissolval;
+use Historian\Importer\WikiData\Extractor\ExtractThreeLetterIsoCode;
+use Historian\Importer\WikiData\Extractor\ExtractTwoLetterIsoCode;
+use Historian\Importer\WikiData\Extractor\ExtractUrl;
 use Historian\Importer\WikiData\ItemFinder;
 use Historian\Importer\WikiData\WikiDataImporter;
 use JsonSchema\Validator;
@@ -87,13 +91,21 @@ $layerEditor = new LayerEditor(
             new DataValueSerializer()
         ))->newItemLookup(),
         [
-            new NameExtractor(),
-            new ThreeLetterIsoCodeExtractor(),
-            new TwoLetterIsoCodeExtractor(),
-            new NumericIsoCodeExtractor(),
-            new SpanBeginExtractor(),
-            new SpanEndExtractor(),
-            new UrlExtractor(),
+            new ExtractName(),
+
+            new ExtractThreeLetterIsoCode(),
+            new ExtractTwoLetterIsoCode(),
+            new ExtractNumericIsoCode(),
+
+            new ExtractBeginOfSpanFromInception(),
+            new ExtractBeginOfSpanFromState(),
+            new ExtractBeginOfSpanFromCountry(),
+
+            new ExtractEndOfSpanFromDissolval(),
+            new ExtractEndOfSpanFromState(),
+            new ExtractEndOfSpanFromCountry(),
+
+            new ExtractUrl(),
         ]
     ),
     new Validator(),

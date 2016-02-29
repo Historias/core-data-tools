@@ -42,8 +42,8 @@ class WikiDataImporter implements Importer
 
     public function import(Filter $filter, ProgressLogger $progressLogger, ErrorLogger $errorLogger) : array
     {
-        $this->itemFinder->find(Property::IS_INSTANCE_OF(), Claim::FORMER_COUNTRY());
-        $this->itemFinder->find(Property::IS_INSTANCE_OF(), Claim::SOUVEREIGN_STATE());
+        $this->itemFinder->find(Property::INSTANCE_OF(), Claim::FORMER_COUNTRY());
+        $this->itemFinder->find(Property::INSTANCE_OF(), Claim::SOUVEREIGN_STATE());
 
         return $this->extractItems($filter, $progressLogger, $errorLogger);
     }
@@ -77,25 +77,13 @@ class WikiDataImporter implements Importer
         foreach ($this->extractors as $extractor) {
             $progressLogger->logExtractorProgress($uuid, $id, $extractor);
             try {
-                $country = array_replace($country, $this->executeExtractor($extractor, $item));
+                $country = array_replace_recursive($country, $this->executeExtractor($extractor, $item));
             } catch (Throwable $e) {
                 $errorLogger->logExtractorError($uuid, $id, $extractor, $e);
                 continue;
             }
         }
 
-        if (empty($country['span']['begin']) && empty($country['span']['end'])) {
-            unset($country['span']);
-        }
-        if (empty($country['three_letter_iso_code'])) {
-            unset($country['three_letter_iso_code']);
-        }
-        if (empty($country['two_letter_iso_code'])) {
-            unset($country['two_letter_iso_code']);
-        }
-        if (empty($country['numeric_iso_code'])) {
-            unset($country['numeric_iso_code']);
-        }
         if (empty($country['name'])) {
             return null;
         }
@@ -109,11 +97,10 @@ class WikiDataImporter implements Importer
     {
         $country = [];
 
-        $this->propertyAccessor->setValue(
-            $country,
-            $extractor->getPath(),
-            $extractor->getValue($this->itemLookup, $item)
-        );
+        $value = $extractor->getValue($this->itemLookup, $item);
+        if ($value !== null) {
+            $this->propertyAccessor->setValue($country, $extractor->getPath(), $value);
+        }
 
         return $country;
     }

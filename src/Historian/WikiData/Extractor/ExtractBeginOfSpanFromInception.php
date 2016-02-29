@@ -4,20 +4,15 @@ namespace Historian\Importer\WikiData\Extractor;
 use Historian\Importer\WikiData\Property;
 use Symfony\Component\PropertyAccess\PropertyPath;
 
-class TwoLetterIsoCodeExtractor extends StatementValueExtractor
+class ExtractBeginOfSpanFromInception extends StatementValueExtractor
 {
     public function getPath() : PropertyPath
     {
-        return new PropertyPath('[two_letter_iso_code]');
+        return new PropertyPath('[span][begin]');
     }
 
     protected function getProperty() : Property
     {
-        return Property::ISO_2_LETTER_CODE();
-    }
-
-    protected function getFallbackProperty()
-    {
-        return Property::FOLLOWED_BY();
+        return Property::INCEPTION();
     }
 }

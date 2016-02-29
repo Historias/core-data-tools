@@ -4,7 +4,7 @@ namespace Historian\Importer\WikiData\Extractor;
 use Historian\Importer\WikiData\Property;
 use Symfony\Component\PropertyAccess\PropertyPath;
 
-class NumericIsoCodeExtractor extends StatementValueExtractor
+class ExtractNumericIsoCode extends StatementValueExtractor
 {
     public function getPath() : PropertyPath
     {
