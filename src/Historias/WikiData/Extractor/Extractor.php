@@ -1,5 +1,5 @@
 <?php
-namespace Historian\Importer\WikiData\Extractor;
+namespace Historias\Importer\WikiData\Extractor;
 
 use Symfony\Component\PropertyAccess\PropertyPath;
 use Wikibase\DataModel\Entity\Item;

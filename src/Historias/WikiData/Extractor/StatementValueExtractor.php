@@ -1,10 +1,10 @@
 <?php
-namespace Historian\Importer\WikiData\Extractor;
+namespace Historias\Importer\WikiData\Extractor;
 
 use DataValues\DataValue;
 use DateTimeImmutable;
-use Historian\Importer\Util\JsonUtil;
-use Historian\Importer\WikiData\Property;
+use Historias\Importer\Util\JsonUtil;
+use Historias\Importer\WikiData\Property;
 use Wikibase\DataModel\Entity\Item;
 use Wikibase\DataModel\Entity\ItemId;
 use Wikibase\DataModel\Entity\PropertyId;

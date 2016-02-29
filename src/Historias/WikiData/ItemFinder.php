@@ -1,5 +1,5 @@
 <?php
-namespace Historian\Importer\WikiData;
+namespace Historias\Importer\WikiData;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Promise\EachPromise;

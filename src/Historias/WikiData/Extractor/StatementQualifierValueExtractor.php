@@ -1,8 +1,8 @@
 <?php
-namespace Historian\Importer\WikiData\Extractor;
+namespace Historias\Importer\WikiData\Extractor;
 
-use Historian\Importer\WikiData\Claim;
-use Historian\Importer\WikiData\Property;
+use Historias\Importer\WikiData\Claim;
+use Historias\Importer\WikiData\Property;
 use Wikibase\DataModel\Entity\PropertyId;
 use Wikibase\DataModel\Snak\PropertyValueSnak;
 use Wikibase\DataModel\Statement\StatementList;

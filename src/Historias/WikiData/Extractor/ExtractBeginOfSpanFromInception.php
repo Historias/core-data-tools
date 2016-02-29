@@ -1,7 +1,7 @@
 <?php
-namespace Historian\Importer\WikiData\Extractor;
+namespace Historias\Importer\WikiData\Extractor;
 
-use Historian\Importer\WikiData\Property;
+use Historias\Importer\WikiData\Property;
 use Symfony\Component\PropertyAccess\PropertyPath;
 
 class ExtractBeginOfSpanFromInception extends StatementValueExtractor

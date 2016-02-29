@@ -1,12 +1,12 @@
 <?php
-namespace Historian\Importer\WikiData;
+namespace Historias\Importer\WikiData;
 
-use Historian\Importer\ErrorLogger;
-use Historian\Importer\Filter;
-use Historian\Importer\Identity\UuidMap;
-use Historian\Importer\Importer;
-use Historian\Importer\ProgressLogger;
-use Historian\Importer\WikiData\Extractor\Extractor;
+use Historias\Importer\ErrorLogger;
+use Historias\Importer\Filter;
+use Historias\Importer\Identity\UuidMap;
+use Historias\Importer\Importer;
+use Historias\Importer\ProgressLogger;
+use Historias\Importer\WikiData\Extractor\Extractor;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use Throwable;
 use Wikibase\DataModel\Entity\Item;

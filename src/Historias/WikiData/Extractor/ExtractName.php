@@ -1,19 +1,19 @@
 <?php
-namespace Historian\Importer\WikiData\Extractor;
+namespace Historias\Importer\WikiData\Extractor;
 
 use Symfony\Component\PropertyAccess\PropertyPath;
 use Wikibase\DataModel\Entity\Item;
 use Wikibase\DataModel\Services\Lookup\ItemLookup;
 
-class ExtractUrl implements Extractor
+class ExtractName implements Extractor
 {
     public function getPath() : PropertyPath
     {
-        return new PropertyPath('[url]');
+        return new PropertyPath('[name]');
     }
 
     public function getValue(ItemLookup $itemLookup, Item $item)
     {
-        return sprintf('https://www.wikidata.org/wiki/Q%d', $item->getId()->getNumericId());
+        return $item->getFingerprint()->getLabel('en')->getText();
     }
 }

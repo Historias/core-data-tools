@@ -1,5 +1,5 @@
 <?php
-namespace Historian\Importer;
+namespace Historias\Importer;
 
 interface Filter
 {

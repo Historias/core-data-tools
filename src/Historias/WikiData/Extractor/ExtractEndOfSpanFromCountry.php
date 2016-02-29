@@ -1,15 +1,15 @@
 <?php
-namespace Historian\Importer\WikiData\Extractor;
+namespace Historias\Importer\WikiData\Extractor;
 
-use Historian\Importer\WikiData\Claim;
-use Historian\Importer\WikiData\Property;
+use Historias\Importer\WikiData\Claim;
+use Historias\Importer\WikiData\Property;
 use Symfony\Component\PropertyAccess\PropertyPath;
 
-class ExtractBeginOfSpanFromState extends StatementQualifierValueExtractor
+class ExtractEndOfSpanFromCountry extends StatementQualifierValueExtractor
 {
     public function getPath() : PropertyPath
     {
-        return new PropertyPath('[span][begin]');
+        return new PropertyPath('[span][end]');
     }
 
     protected function getProperty() : Property
@@ -19,11 +19,11 @@ class ExtractBeginOfSpanFromState extends StatementQualifierValueExtractor
 
     protected function getClaim() : Claim
     {
-        return Claim::STATE();
+        return Claim::COUNTRY();
     }
 
     protected function getQualifierProperty() : Property
     {
-        return Property::START_TIME();
+        return Property::END_TIME();
     }
 }

@@ -1,7 +1,7 @@
 <?php
-namespace Historian\Importer\Identity;
+namespace Historias\Importer\Identity;
 
-use Historian\Importer\Util\JsonUtil;
+use Historias\Importer\Util\JsonUtil;
 use Ramsey\Uuid\Uuid;
 
 class UuidMap

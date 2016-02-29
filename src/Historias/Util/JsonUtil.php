@@ -1,5 +1,5 @@
 <?php
-namespace Historian\Importer\Util;
+namespace Historias\Importer\Util;
 
 final class JsonUtil
 {

@@ -1,8 +1,8 @@
 <?php
-namespace Historian\Importer\WikiData\Extractor;
+namespace Historias\Importer\WikiData\Extractor;
 
-use Historian\Importer\WikiData\Claim;
-use Historian\Importer\WikiData\Property;
+use Historias\Importer\WikiData\Claim;
+use Historias\Importer\WikiData\Property;
 use Symfony\Component\PropertyAccess\PropertyPath;
 
 class ExtractBeginOfSpanFromCountry extends StatementQualifierValueExtractor

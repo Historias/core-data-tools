@@ -1,5 +1,5 @@
 <?php
-namespace Historian\Importer\WikiData;
+namespace Historias\Importer\WikiData;
 
 use Eloquent\Enumeration\AbstractEnumeration;
 

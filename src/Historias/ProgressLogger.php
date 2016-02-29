@@ -1,7 +1,7 @@
 <?php
-namespace Historian\Importer;
+namespace Historias\Importer;
 
-use Historian\Importer\WikiData\Extractor\Extractor;
+use Historias\Importer\WikiData\Extractor\Extractor;
 use Ramsey\Uuid\Uuid;
 
 interface ProgressLogger

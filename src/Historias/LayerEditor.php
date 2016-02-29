@@ -1,7 +1,7 @@
 <?php
-namespace Historian\Importer;
+namespace Historias\Importer;
 
-use Historian\Importer\Util\JsonUtil;
+use Historias\Importer\Util\JsonUtil;
 use JsonSchema\Uri\UriRetriever;
 use JsonSchema\Validator;
 

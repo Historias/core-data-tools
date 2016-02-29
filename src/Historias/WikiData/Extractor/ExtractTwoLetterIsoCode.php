@@ -1,19 +1,19 @@
 <?php
-namespace Historian\Importer\WikiData\Extractor;
+namespace Historias\Importer\WikiData\Extractor;
 
-use Historian\Importer\WikiData\Property;
+use Historias\Importer\WikiData\Property;
 use Symfony\Component\PropertyAccess\PropertyPath;
 
-class ExtractNumericIsoCode extends StatementValueExtractor
+class ExtractTwoLetterIsoCode extends StatementValueExtractor
 {
     public function getPath() : PropertyPath
     {
-        return new PropertyPath('[numeric_iso_code]');
+        return new PropertyPath('[two_letter_iso_code]');
     }
 
     protected function getProperty() : Property
     {
-        return Property::ISO_NUMERIC_CODE();
+        return Property::ISO_2_LETTER_CODE();
     }
 
     protected function getFallbackProperty()
